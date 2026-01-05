@@ -127,13 +127,7 @@ body {
 .pix {
   display: flex;
   justify-content: center;
-  gap: 14px;
   margin-top: 20px;
-}
-
-.pix img {
-  max-width: 300px;
-  height: auto;
 }
 
 .video-box {
@@ -142,10 +136,28 @@ body {
 
 .video-box video {
   width: 100%;
-  max-width: 480px;
   border-radius: 14px;
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .pix img {
+    max-width: 350px;
+  }
+
+  .video-box video {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .pix img {
+    max-width:430px;
+  }
+
+  .video-box video {
+    max-width: 480px;
+  }
 }
 
 /* maps */
