@@ -5,45 +5,37 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ====== FUNDO ====== */
+/* ===== FUNDO ===== */
 body {
   background: #f4f6f8;
 }
 
-/* ====== CAPA ====== */
-.cover {
-  height: 300px;
-  background-image: url("assets/irmas.jpeg");
-  background-size: cover;
-  background-position: center top;
-  position: relative;
-    width: 100%;
-
-}
-.cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.cover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.05)
-  );
+/* ===== CAPA ===== */
+.cover{
+  height:360px;
+  background-image:url("assets/irmas.jpeg");
+  background-size:cover;
+  background-position:center 30%;
+  position:relative;
+  overflow:hidden;
 }
 
 
-/* leve escurecimento igual ao print */
+/* Gradiente de transição */
+.cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  
+}
+
 .cover .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,.25);
 }
-/* === back ===*/
+
+/* ===== BACK ===== */
 .page-bg {
   min-height: 100vh;
   background-image: url("assets/fundo.png");
@@ -51,161 +43,216 @@ body {
   background-position: center;
 }
 
-
-/* ====== CONTAINER ====== */
-.container {
-  max-width: 420px;
-  margin: -60px auto 0;
-  padding: 0 20px 30px;
+/* ===== CONTAINER ===== */
+.container{
+  max-width:420px;
+  margin:-90px auto 0;
+  padding:0 20px 30px;
 }
 
-/* ====== PERFIL ====== */
+
+/* ===== PERFIL ===== */
 .profile {
-  background: #fff;
+  background: #e4c6a0;
   border-radius: 16px;
   padding: 70px 20px 25px;
   text-align: center;
   position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
 }
-
-/* AVATAR SOBREPOSTO */
 .profile img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #fff;
-  position: absolute;
-  top: -55px;
-  left: 50%;
-  transform: translateX(-50%);
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #fff;
+  position:absolute;
+  top:-55px;
+  left:50%;
+  transform:translateX(-50%);
 }
+.profile h1 { font-size:22px; }
+.profile p { font-size:14px;color:#666;margin-top:6px; }
 
-.profile h1 {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.profile p {
-  font-size: 14px;
-  color: #666;
-  margin-top: 6px;
-}
-
-/* ====== LINKS ====== */
-.links {
-  margin-top: 20px;
+/* ================== CARDS ================== */
+.cards {
+  margin-top: 22px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 22px;
 }
 
-.link {
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
+.card {
+  height: 150px;
+  border-radius: 26px;
+  overflow: hidden;
   text-decoration: none;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.2s;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 14px 30px rgba(0,0,0,.28);
+  transition: .3s;
 }
+.card:hover { transform: scale(1.02); }
 
-.link:hover {
-  transform: scale(1.03);
-}
-
-/* CORES */
-.primary { background: #8e44ad; }
-.whatsapp { background: #25D366; }
-.youtube { background: #ff0000; }
-.tiktok { background: #000; }
-
-
-/* ==== pix ====*/
-.pix {
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,.65), rgba(0,0,0,.2));
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  padding: 26px;
 }
 
-.video-box {
-  margin: 20px 0;
+.card h2 {
+  color:#fff;
+  font-size:20px;
+  max-width:70%;
+  line-height:1.2;
 }
 
+.card span {
+  margin-top: 12px;
+  background:#7a3c00;
+  color:#fff;
+  width:max-content;
+  padding:8px 18px;
+  border-radius:22px;
+  font-size:13px;
+}
+
+/* IMAGENS DOS CARDS */
+.card-encontro { background-image:url("assets/encontro.jpeg"); }
+.card-oracao   { background-image:url("assets/irmas.jpeg"); }
+.card-youtube  { background-image:url("assets/irmas.jpeg"); }
+.card-tiktok   { background-image:url("assets/tiktok.jpg"); }
+.card-pix      { background-image:url("assets/pixfundo.jpeg"); }
+
+/* ===== PIX ===== */
+.pix { display:flex; justify-content:center; margin-top:20px; }
+
+.Texto-Pix {
+  display:flex;
+  justify-content:center;
+  margin-top:20px;
+}
+.Texto-Pix p{
+  border:2px solid #000;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:600;
+  background:#eab775;
+}
+
+/* ===== VIDEO ===== */
+.video-box { margin:20px 0; }
 .video-box video {
-  width: 100%;
-  border-radius: 14px;
-  display: block;
-  margin: 0 auto;
+  width:100%;
+  border-radius:14px;
 }
 
-@media (max-width: 767px) {
-  .pix img {
-    max-width: 350px;
-  }
-
-  .video-box video {
-    max-width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .pix img {
-    max-width:430px;
-  }
-
-  .video-box video {
-    max-width: 480px;
-  }
-}
-
-/* maps */
-.map-section {
-  margin-top: 30px;
-}
-
+/* ===== MAPAS ===== */
+.map-section { margin-top:30px; }
 .map-box {
-  background: #fff;
-  padding: 15px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background:#fff;
+  padding:15px;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
+.map { width:100%; height:250px; border-radius:12px; }
 
-.map-box h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.map-box p {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #555;
-}
-
-.map {
-  width: 100%;
-  height: 250px;
-  border-radius: 12px;
-}
-
-
-/* ====== RODAPÉ ====== */
+/* ===== RODAPÉ ===== */
 footer {
-  text-align: center;
-  margin-top: 25px;
-  font-size: 12px;
-  color: #888;
+  text-align:center;
+  margin-top:25px;
+  font-size:12px;
+  color:#888;
 }
 
-/* ====== DESKTOP ====== */
-@media (min-width: 768px) {
-  .cover {
-    height: 260px;
-  }
-
-  .container {
-    max-width: 480px;
-  }
+/* ===== RESPONSIVO ===== */
+@media (max-width:767px){
+  .pix img{max-width:350px;}
 }
+@media (min-width:768px){
+  .pix img{max-width:430px;}
+  .container{max-width:480px;}
+}
+
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:60px;
+  height:60px;
+  background:#25d366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:32px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+  z-index:999999 !important;
+}
+
+
+
+
+/* MODAL */
+.zap-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+    z-index:999998 !important;
+
+}
+
+.zap-modal{
+  width:340px;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.zap-header{
+  background:#7a3c00;
+  color:#fff;
+  padding:14px;
+  font-size:14px;
+  position:relative;
+}
+
+.zap-header span{
+  position:absolute;
+  right:12px;
+  top:6px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.zap-modal input{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-bottom:1px solid #ddd;
+}
+
+.zap-modal button{
+  width:100%;
+  padding:14px;
+  background:#25d366;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  font-weight:600;
+}
+
