@@ -16,48 +16,119 @@
     <div class="overlay"></div>
   </header>
 
-  <!-- CONTEÚDO -->
-  <main class="container">
+  <!-- FUNDO DA PÁGINA -->
+  <main class="page-bg">
+    <div class="container">
 
-    <!-- PERFIL -->
-    <section class="profile">
-      <img src="assets/logoo.jpeg" alt="Fraternidade">
-      <h1>Fraternidade</h1>
-      <p>Um espaço de acolhimento, fé e amor</p>
-    </section>
+      <!-- PERFIL -->
+      <section class="profile">
+        <img src="assets/logoo.jpeg" alt="Fraternidade">
+        <h1>Fraternidade</h1>
+        <p>Um espaço de acolhimento, fé e amor</p>
+      </section>
 
-    <!-- LINKS -->
-    <section class="links">
+      <!-- VÍDEO 
+      <section class="video-box">
+        <video controls playsinline preload="metadata">
+          <source src="assets/video.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </section>
+-->
+      <!-- LINKS -->
+      <section class="links">
+        <a href="https://forms.gle/QxVRYiEkENGaokNz5" target="_blank" class="link primary">
+          🤍 Encontro Abraço na Alma
+        </a>
 
-      <a href="https://forms.gle/QxVRYiEkENGaokNz5" target="_blank" class="link primary">
-        🤍 Encontro Abraço na Alma
-      </a>
+        <a href="https://wa.me/5583991853511" target="_blank" class="link whatsapp">
+          💬 Falar pelo WhatsApp
+        </a>
 
-      <a href="https://wa.me/5583991853511" target="_blank" class="link whatsapp">
-        💬 Falar pelo WhatsApp
-      </a>
+        <a href="https://youtube.com/@fraternidadefsc" target="_blank" class="link youtube">
+          ▶️ YouTube
+        </a>
 
-      <a href="https://youtube.com/@fraternidadefsc" target="_blank" class="link youtube">
-        ▶️ YouTube
-      </a>
+        <a href="https://www.tiktok.com/@fraternidadefsc" target="_blank" class="link tiktok">
+          🎵 TikTok
+        </a>
+      </section>
 
-      <a href="https://www.tiktok.com/@fraternidadefsc" target="_blank" class="link tiktok">
-        🎵 TikTok
-      </a>
+      <!-- PIX -->
+      <div class="pix">
+        <img src="assets/pix.jpeg" alt="PIX">
+      </div>
 
-    </section>
+      <!-- MAPAS -->
+      <section class="map-section">
+        <h2>Nossos Endereços</h2>
 
-    <div class="pix">
-    <section>
-        <img src="assets/pix.png" alt="pix">
-    </section>
+        <!-- MAPA 1 -->
+        <div class="map-box">
+          <h3>📍 Jardim Oceania</h3>
+          <div id="map-oceania" class="map"></div>
+          <p>Rua Antônio Pádua Vasconcelos, 140 – João Pessoa/PB</p>
+        </div>
+
+        <!-- MAPA 2 -->
+        <div class="map-box">
+          <h3>📍 Cristo Redentor</h3>
+          <div id="map-cristo" class="map"></div>
+          <p>Rua João Paiva Ponce de Léon, 216 – João Pessoa/PB</p>
+        </div>
+      </section>
+
+      <footer>
+        © Fraternidade
+      </footer>
+
     </div>
-    
-    <footer>
-      © Fraternidade
-    </footer>
-
   </main>
+
+  <!-- GOOGLE MAPS SCRIPT -->
+  <script>
+    function initMap() {
+
+      // Jardim Oceania
+      const oceania = { lat: -7.162236, lng: -34.87501 };
+      const mapOceania = new google.maps.Map(
+        document.getElementById("map-oceania"),
+        {
+          zoom: 15,
+          center: oceania,
+        }
+      );
+
+      new google.maps.Marker({
+        position: oceania,
+        map: mapOceania,
+        title: "Jardim Oceania",
+      });
+
+      // Cristo Redentor
+      const cristo = { lat: -7.0754117, lng: -34.8368802 };
+      const mapCristo = new google.maps.Map(
+        document.getElementById("map-cristo"),
+        {
+          zoom: 15,
+          center: cristo,
+        }
+      );
+
+      new google.maps.Marker({
+        position: cristo,
+        map: mapCristo,
+        title: "Cristo Redentor",
+      });
+    }
+  </script>
+
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8JGyempUB4eN9AikVugjykJZNMzD8TL8&callback=initMap"
+  async
+  defer
+></script>
+
 
 </body>
 </html>
